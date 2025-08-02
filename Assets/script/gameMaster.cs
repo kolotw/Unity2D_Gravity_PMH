@@ -40,9 +40,12 @@ public class gameMaster : MonoBehaviour {
 				SceneManager.LoadScene("311007");
 				break;
 			case "311007":
-				SceneManager.LoadScene("311024");
+				SceneManager.LoadScene("311009");
 				break;
-			case "311024":
+            case "311009":
+                SceneManager.LoadScene("311024");
+                break;
+            case "311024":
 				SceneManager.LoadScene("311026");
 				break;
 			case "311026":
