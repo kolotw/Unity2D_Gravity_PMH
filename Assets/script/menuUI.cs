@@ -7,7 +7,14 @@ using UnityEngine.SceneManagement;
 public class menuUI : MonoBehaviour {
 	public string levelName;
 
-	public void myFunction(){
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("00home");
+        }
+    }
+    public void myFunction(){
 		print (name);
         switch (name)
         {
