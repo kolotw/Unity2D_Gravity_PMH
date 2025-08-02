@@ -122,6 +122,39 @@
 
       document.body.appendChild(script);
 
+<script>
+// 自動根據視窗調整 Canvas 尺寸並維持長寬比
+function resizeUnityCanvas() {
+  const canvas = document.getElementById("unity-canvas");
+  const container = document.getElementById("unity-container");
+  
+  const aspect = 960 / 600;
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+
+  if (width / height > aspect) {
+    // 螢幕較寬，限制高度
+    width = height * aspect;
+  } else {
+    // 螢幕較窄，限制寬度
+    height = width / aspect;
+  }
+
+  canvas.style.width = width + "px";
+  canvas.style.height = height + "px";
+  canvas.style.margin = "auto";
+  canvas.style.display = "block";
+  container.style.justifyContent = "center";
+  container.style.alignItems = "center";
+}
+
+window.addEventListener("resize", resizeUnityCanvas);
+window.addEventListener("orientationchange", resizeUnityCanvas);
+window.addEventListener("load", resizeUnityCanvas);
+</script>
+
+
+
     </script>
   
 <script>
